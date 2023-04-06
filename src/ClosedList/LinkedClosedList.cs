@@ -3,7 +3,7 @@ using ClosedList.Interfaces;
 
 namespace ClosedList;
 
-internal class LinkedClosedList<T> : IClosedList<T?>
+public class LinkedClosedList<T> : IClosedList<T?>
 {
     private Node<T?> _head;
     private Node<T?> _current;
@@ -74,7 +74,8 @@ internal class LinkedClosedList<T> : IClosedList<T?>
         var current = _head;
         do
         {
-            if (current.Data != null && current.Data.Equals(item))
+            if (current.Data is not null && current.Data.Equals(item) ||
+                current.Data is null && item is null)
                 return true;
             current = current.Next;
         } while (current != _head);
@@ -86,6 +87,8 @@ internal class LinkedClosedList<T> : IClosedList<T?>
     {
         if (IsEmpty)
             return;
+        if (array.Length - arrayIndex < Count)
+            throw new ArgumentException("Destination array was not long enough.", nameof(array));
         var current = _head;
         do
         {
@@ -114,7 +117,8 @@ internal class LinkedClosedList<T> : IClosedList<T?>
             return -1;
         do
         {
-            if (current.Data != null && current.Data.Equals(item))
+            if (current.Data != null && current.Data.Equals(item) ||
+                current.Data is null && item is null)
                 return index;
             index++;
             current = current.Next;
@@ -160,8 +164,8 @@ internal class LinkedClosedList<T> : IClosedList<T?>
         var current = _head;
         if (Count == 1)
         {
-            if (_head.Data is not null && !_head.Data.Equals(item) ||
-                _head.Data is null && item is not null)
+            if (current.Data is not null && !current.Data.Equals(item) ||
+                current.Data is null && item is not null)
                 return false;
             Clear();
             return true;
@@ -169,9 +173,12 @@ internal class LinkedClosedList<T> : IClosedList<T?>
 
         do
         {
-            if (_head.Data is not null && !_head.Data.Equals(item) ||
-                _head.Data is null && item is not null)
+            if (current.Data is not null && !current.Data.Equals(item) ||
+                current.Data is null && item is not null)
+            {
+                current = current.Next;
                 continue;
+            }
             RemoveBetween(current.Previous, current.Next);
             return true;
         } while (current != _head);

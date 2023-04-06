@@ -1,6 +1,6 @@
 ﻿namespace ClosedList.Interfaces;
 
-internal interface IClosedList<T> : IList<T>
+public interface IClosedList<T> : IList<T>
 {
     void MoveNext(int step = 1);
     void MoveBack(int step = 1);
