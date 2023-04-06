@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{66F59723-311B-4F39-80B5-DA3070F4309F}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClosedList", "src\ClosedList\ClosedList.csproj", "{5A8B6900-4471-4D01-B033-770BD5C3CA70}"
 EndProject
 Global
@@ -19,7 +21,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C96DAAF4-6808-4A75-8CE7-43D9FD5089E4}
+	GlobalSection(NestedProjects) = preSolution
+		{5A8B6900-4471-4D01-B033-770BD5C3CA70} = {66F59723-311B-4F39-80B5-DA3070F4309F}
 	EndGlobalSection
 EndGlobal
