@@ -5,11 +5,11 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{66F59723-311B-4F39-80B5-DA3070F4309F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClosedList", "src\ClosedList\ClosedList.csproj", "{5A8B6900-4471-4D01-B033-770BD5C3CA70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2", "src\Task2\Task2.csproj", "{5A8B6900-4471-4D01-B033-770BD5C3CA70}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A323DA00-EDDF-4175-9479-850656E30739}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClosedList.UnitTests", "test\ClosedList.UnitTests\ClosedList.UnitTests.csproj", "{4D3B5DDA-3A8A-4425-8362-CA12CC8A2B09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2.UnitTests", "test\Task2.UnitTests\Task2.UnitTests.csproj", "{4D3B5DDA-3A8A-4425-8362-CA12CC8A2B09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

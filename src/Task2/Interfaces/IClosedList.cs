@@ -1,4 +1,4 @@
-﻿namespace ClosedList.Interfaces;
+﻿namespace budaevaler.Interview.Task2.Interfaces;
 
 public interface IClosedList<T> : IList<T>
 {

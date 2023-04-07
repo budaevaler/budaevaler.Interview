@@ -2,7 +2,7 @@ using AutoBogus;
 using Bogus;
 using FluentAssertions;
 
-namespace ClosedList.UnitTests;
+namespace budaevaler.Interview.Task2.UnitTests;
 
 public abstract class LinkedClosedListTests<T>
 {

@@ -1,5 +1,5 @@
 ﻿using Bogus;
-using ClosedList;
+using budaevaler.Interview.Task2;
 
 var closedList = new LinkedClosedList<string>(GetNouns(10));
 closedList.HeadReached += (s, e) => Console.WriteLine($"Head reached! Head: {e}");

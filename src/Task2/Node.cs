@@ -1,4 +1,4 @@
-﻿namespace ClosedList;
+﻿namespace budaevaler.Interview.Task2;
 
 public class Node<T>
 {

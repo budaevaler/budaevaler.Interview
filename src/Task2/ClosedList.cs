@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using ClosedList.Interfaces;
+using budaevaler.Interview.Task2.Interfaces;
 
-namespace ClosedList;
+namespace budaevaler.Interview.Task2;
 
-internal sealed class ClosedList<T> : IClosedList<T?>
+public sealed class ClosedList<T> : IClosedList<T?>
 {
     private readonly List<T?> _list;
     private int _position;

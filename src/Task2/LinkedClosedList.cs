@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using ClosedList.Interfaces;
+using budaevaler.Interview.Task2.Interfaces;
 
-namespace ClosedList;
+namespace budaevaler.Interview.Task2;
 
 public class LinkedClosedList<T> : IClosedList<T?>
 {
@@ -16,10 +16,8 @@ public class LinkedClosedList<T> : IClosedList<T?>
 
     public LinkedClosedList(IEnumerable<T> elements) : this()
     {
-        foreach (var element in elements)
-        {
+        foreach (var element in elements) 
             Add(element);
-        }
     }
 
     public T? this[int index]
@@ -74,8 +72,7 @@ public class LinkedClosedList<T> : IClosedList<T?>
         var current = _head;
         do
         {
-            if (current.Data is not null && current.Data.Equals(item) ||
-                current.Data is null && item is null)
+            if (IsEquals(current.Data, item))
                 return true;
             current = current.Next;
         } while (current != _head);
@@ -117,8 +114,7 @@ public class LinkedClosedList<T> : IClosedList<T?>
             return -1;
         do
         {
-            if (current.Data != null && current.Data.Equals(item) ||
-                current.Data is null && item is null)
+            if (IsEquals(current.Data, item))
                 return index;
             index++;
             current = current.Next;
@@ -126,6 +122,8 @@ public class LinkedClosedList<T> : IClosedList<T?>
 
         return -1;
     }
+
+
 
     public void Insert(int index, T? item)
     {
@@ -164,8 +162,7 @@ public class LinkedClosedList<T> : IClosedList<T?>
         var current = _head;
         if (Count == 1)
         {
-            if (current.Data is not null && !current.Data.Equals(item) ||
-                current.Data is null && item is not null)
+            if (!IsEquals(current.Data, item))
                 return false;
             Clear();
             return true;
@@ -173,8 +170,7 @@ public class LinkedClosedList<T> : IClosedList<T?>
 
         do
         {
-            if (current.Data is not null && !current.Data.Equals(item) ||
-                current.Data is null && item is not null)
+            if (!IsEquals(current.Data, item))
             {
                 current = current.Next;
                 continue;
@@ -206,6 +202,10 @@ public class LinkedClosedList<T> : IClosedList<T?>
     }
 
     private bool IsEmpty => Count == 0;
+    
+    private static bool IsEquals(T? data, T? item) =>
+        data != null && data.Equals(item) ||
+        data is null && item is null;
 
     private void AddFirst(T? item)
     {
